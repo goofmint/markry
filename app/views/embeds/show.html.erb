@@ -1,0 +1,9 @@
+<% if @wrap %>
+<html>
+  <head>
+    <script>
+      <%= raw(@url.body) %>
+    </script>
+  </head>
+</html>
+<% else %><%= raw(@url.body) %><% end %>

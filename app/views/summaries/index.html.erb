@@ -1,0 +1,23 @@
+<% if @summaries.empty?%>
+  <div class="jumbotron">
+    <h1>まとめを作成しましょう！</h1>
+    <p>まだまとめが一つもありません。さっそく作成しましょう！</p>
+    <p>
+      <%= link_to "まとめを作成する", new_my_summary_path, :class => "btn btn-lg btn-primary", :role => "button" %>
+    </p>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-md-9">
+      <% @summaries.each do |summary|%>
+        <div class="row">
+	  <div class="col-md-3">.col-md-4</div>
+	  <div class="col-md-6">
+	    <%= link_to summary.title, summary_path(summary.id) %>
+	  </div>
+	</div>
+      <% end %>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+<% end %>
