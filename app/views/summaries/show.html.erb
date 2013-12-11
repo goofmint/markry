@@ -1,0 +1,6 @@
+<% unless @summary %>
+  <h1>まとめがないか、非公開になっています。</h1>
+<% else %>
+  <h1><%= @summary.title %></h1>
+  <%= raw markdown.render(@summary.body_view) %>
+<% end %>

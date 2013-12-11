@@ -1,0 +1,7 @@
+<table>
+  <% @summaries.each do |summary|%>
+    <tr>
+      <td><%= link_to summary.title, edit_my_summary_path(summary) %>
+    </tr>
+  <% end %>
+</table>

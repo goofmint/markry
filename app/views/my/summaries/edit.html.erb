@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <%= form_for @summary, :url => my_summary_path(@summary.temporary_code), :html => {:class => "form", :role => "form"}, :remote => true do |f|%>
+    <div class="alert hide"></div>
+    <div class="col-md-6">
+      <div class="form-group">
+	<%= f.text_field :string_tag, :class => "form-control", :placeholder => "タグ", "data-role" => "tagsinput" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_area :body %>
+      </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">保存</button>
+      <button type="submit" name="public" class="btn btn-default btn-info">公開</button>
+    </div>
+    <div class="preview">
+    </div>
+  </div>
+  <% end %>
+</div>
